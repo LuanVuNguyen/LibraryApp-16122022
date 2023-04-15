@@ -1,0 +1,291 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BlueDarkGray"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/target_label"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="探索対象のEPCを入力して下さい。"
+                android:textColor="@color/BlueLight"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8">
+
+                    <EditText
+                        android:id="@+id/target_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:inputType="textMultiLine"
+                        android:maxLength="24"
+                        android:padding="5dp"
+                        android:text="00DD20220703000058000831"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <android.widget.Button
+                        android:id="@+id/epclist_add_button"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_shape_blue_light_search"
+                        android:contentDescription="追加"
+
+                        android:text="追加"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/target_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8">
+
+                    <ScrollView
+                        android:id="@+id/ScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableLayout
+                            android:id="@+id/target_TableLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:stretchColumns="1"></TableLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@color/BlueDarkGray">
+
+                    <android.widget.Button
+                        android:id="@+id/epclist_clear_button"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_shape_blue_light_search"
+                        android:contentDescription="クリア"
+                        android:text="クリア"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/exclusion_label"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="探索除外対象リストを追加して下さい。"
+                android:textColor="@color/BlueLight"
+                android:textSize="14sp"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8">
+
+                    <EditText
+                        android:id="@+id/exclusion_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:inputType="textMultiLine"
+                        android:maxLength="24"
+                        android:padding="5dp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <android.widget.Button
+                        android:id="@+id/exclusion_add_button"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+
+                        android:background="@drawable/btn_shape_blue_light_search"
+                        android:contentDescription="追加"
+                        android:text="追加"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/exclusion_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8">
+
+                    <ScrollView
+                        android:id="@+id/exclusion_ScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableLayout
+                            android:id="@+id/exclusion_TableLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:stretchColumns="1"></TableLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@color/BlueDarkGray">
+
+                    <android.widget.Button
+                        android:id="@+id/exclusion_clear_button"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_shape_blue_light_search"
+                        android:contentDescription="クリア"
+                        android:text="クリア"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <android.widget.Button
+                android:id="@+id/search_btn"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape_blue_light_search"
+                android:contentDescription=""
+                android:text="OK"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="50dp"
+            android:gravity="center">
+
+            <Switch
+                android:id="@+id/search_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Switch"
+                android:layout_marginBottom="5dp"
+                android:textOn="EPC複数指定"
+                android:textOff="EPC完全一致" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20pt">
+
+            <EditText
+                android:id="@+id/editTextBluetoothAddr"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="D9:B4:AB:ED:75:BB" />
+
+            <android.widget.Button
+                android:id="@+id/buttonConnect"
+                style="@android:style/Widget.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_shape_blue_light_search"
+                android:text="connect" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_height="50dp"
+            android:gravity="center">
+            <Switch
+                android:id="@+id/switchType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Switch"
+                android:textOn="UF-2200"
+                android:textOff="UF-3000" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal">
+    <!--Make sure image is present in Drawable folder-->
+    <TextView
+        android:id="@+id/txt_item_transfer"
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:background="#ffff"
+        android:text="Demo"
+        android:textColor="#000" />
+</LinearLayout>

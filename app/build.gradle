@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    signingConfigs {
+        release  {
+            storeFile file('D:\\Android\\APK\\abs_ver2.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+    }
+    namespace 'com.example.libraryapp'
+    compileSdk 33
+    buildToolsVersion '30.0.3'
+
+    defaultConfig {
+        applicationId "com.example.libraryapp"
+        minSdk 20
+        targetSdk 33
+        //targetSdkVersion 22
+        versionCode 2
+        versionName "2.0.1"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility sourceCompatibility
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    configurations {
+        all {
+            exclude group: 'commons-logging', module: 'commons-logging'
+            exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+        }
+    }
+}
+
+dependencies {
+    implementation group: 'com.opencsv', name: 'opencsv', version: '5.7.1' // lib open CSVWriter
+    implementation group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.8.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    implementation files('libs/ExplorationRfid.jar')
+    implementation files('libs/sleduhf-v1.0.3.jar')
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation files('libs/tecrfidsuite.jar')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.android.support:appcompat-v7:22.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'org.greenrobot:eventbus:3.2.0'
+}
